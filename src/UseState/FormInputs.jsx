@@ -15,13 +15,8 @@ export default function FormInputs() {
       alert("please fill up the fields");
       return;
     }
-    setSubmittedData(
-      ...firstName,
-      ...lastName,
-      ...email,
-      ...password,
-      ...gender
-    );
+    setSubmittedData({ firstName, lastName, email, password, gender });
+    console.log({ firstName, lastName, email, password, gender });
   };
 
   return (
@@ -110,19 +105,19 @@ export default function FormInputs() {
       {submittedData && (
         <ul className="w-6/12 ml-5">
           <li className="mb-3 flex items-center">
-            First Name: <h1>{firstName}</h1>
+            First Name: <h1>{submittedData.firstName}</h1>
           </li>
           <li className="mb-3 flex items-center">
-            Last Name: <h1>{lastName}</h1>
+            Last Name: <h1>{submittedData.lastName}</h1>
           </li>
           <li className="mb-3 flex items-center">
-            Email: <h1>{email}</h1>
+            Email: <h1>{submittedData.email}</h1>
           </li>
           <li className="mb-3 flex items-center">
-            Gender: <h1>{gender}</h1>
+            Gender: <h1>{submittedData.gender}</h1>
           </li>
           <li className="mb-3 flex items-center">
-            Password: <h1>{password}</h1>
+            Password: <h1>{submittedData.password}</h1>
           </li>
         </ul>
       )}
