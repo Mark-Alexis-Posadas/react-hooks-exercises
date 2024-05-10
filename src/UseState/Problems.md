@@ -1,4 +1,4 @@
-1. Create a simple counter application using `useState` to increment and decrement the counter.
+1. Create a simple counter application using `useState` to increment and decrement the counter. - `Done`
 2. Build a form component that uses `useState` to manage the state of form inputs.
 3. Implement a toggle switch component using `useState` to manage the state of the switch.
 4. Create a todo list application where `useState` is used to manage the state of the todo items.
