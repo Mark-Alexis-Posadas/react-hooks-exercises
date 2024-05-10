@@ -1,8 +1,14 @@
-# React + Vite
+# React Hooks Exercises
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### useState Hook
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Create a simple counter application using `useState` to increment and decrement the counter. - `Done`
+2. Build a form component that uses `useState` to manage the state of form inputs.
+3. Implement a toggle switch component using `useState` to manage the state of the switch.
+4. Create a todo list application where `useState` is used to manage the state of the todo items.
+5. Develop a color picker component that uses `useState` to manage the selected color state.
+6. Build a tab navigation component where `useState` is used to manage the active tab state.
+7. Implement a simple quiz application using `useState` to manage the current question and user answers.
+8. Create a dropdown menu component that uses `useState` to manage the visibility of the dropdown.
+9. Develop a modal component where `useState` is used to manage the visibility of the modal.
+10. Build a simple image carousel component that uses `useState` to manage the index of the current image being displayed.

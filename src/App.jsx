@@ -1,9 +1,9 @@
-import Counter from "./UseState/Counter";
+import FormInputs from "./UseState/FormInputs";
 
 const App = () => {
   return (
     <>
-      <Counter />
+      <FormInputs />
     </>
   );
 };
