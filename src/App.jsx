@@ -1,9 +1,9 @@
-import FormInputs from "./UseState/FormInputs";
+import ToggleSwitch from "./UseState/ToggleSwitch";
 
 const App = () => {
   return (
     <>
-      <FormInputs />
+      <ToggleSwitch />
     </>
   );
 };
