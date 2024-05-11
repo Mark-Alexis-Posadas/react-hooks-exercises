@@ -37,9 +37,9 @@ export default function ColorPicker() {
   }, [copyToClipboard]);
 
   return (
-    <div>
+    <div className="p-20 w-[900px] m-auto">
       <div className="bg-white shadow-[0 5px 10px rgba(0, 0, 0, 0.12)] rounded transition-[all 0.2s ease]">
-        <h2>colors</h2>
+        <h2 className="font-bold text-4xl mb-20">Color Picker</h2>
         <div className="flex items-center justify-center">
           <div
             className="w-20 h-20 rounded mr-7"
@@ -63,7 +63,7 @@ export default function ColorPicker() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center bg-white shadow-md p-3 rounded">
+      <div className="flex items-center justify-center bg-white shadow-md p-3 mt-10 rounded">
         {colors.map((color) => (
           <div
             onClick={() => handleClick(color.hex)}
