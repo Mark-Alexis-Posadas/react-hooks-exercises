@@ -94,7 +94,7 @@ export default function TabNavigation() {
             </div>
           )}
           {index === 1 && (
-            <div>
+            <div className="bg-slate-100 m-10 p-10">
               <h1 className="font-bold text-green-600 my-4 text-4xl">
                 Welcome to Our Blog!
               </h1>
@@ -127,7 +127,7 @@ export default function TabNavigation() {
             </div>
           )}
           {index === 2 && (
-            <div>
+            <div className="bg-slate-100 m-10 p-10">
               <h1 className="font-bold text-green-600 my-4 text-4xl">
                 About [Your Company Name]
               </h1>
@@ -171,7 +171,7 @@ export default function TabNavigation() {
             </div>
           )}
           {index === 3 && (
-            <div>
+            <div className="bg-slate-100 m-10 p-10">
               <h1 className="font-bold text-green-600 my-4 text-4xl">
                 Get in Touch
               </h1>
