@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export default function Modal() {
@@ -19,7 +19,7 @@ export default function Modal() {
               <h1 className="font-bold text-white">Modal title</h1>
 
               <FontAwesomeIcon
-                icon={faX}
+                icon={faTimes}
                 className="text-white cursor-pointer"
                 onClick={() => setShowModal(false)}
               />
