@@ -1,9 +1,9 @@
-import ColorPicker from "./UseState/ColorPicker";
+import TabNavigation from "./UseState/TabNavigation";
 
 const App = () => {
   return (
     <>
-      <ColorPicker />
+      <TabNavigation />
     </>
   );
 };
