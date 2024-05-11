@@ -15,12 +15,21 @@ const colors = [
 
 export default function ColorPicker() {
   const [hexColor, setHexColor] = useState(colors[0].hex);
+
+  const handleClick = (color) => {
+    setHexColor(color);
+  };
+
   return (
     <div>
       <div className="bg-white shadow-[0 5px 10px rgba(0, 0, 0, 0.12)] rounded transition-[all 0.2s ease]">
         <h2>colors</h2>
-        <div></div>
+
         <div className="flex items-cener">
+          <div
+            className="w-20 h-20"
+            style={{ backgroundColor: hexColor }}
+          ></div>
           <h3 className="font-bold">
             HEX: <span className="font-light">{hexColor}</span>
           </h3>
@@ -30,6 +39,7 @@ export default function ColorPicker() {
       <div className="flex items-center bg-white shadow-md p-3 rounded">
         {colors.map((color) => (
           <div
+            onClick={() => handleClick(color.hex)}
             key={color.id}
             className="w-10 h-10 cursor-pointer"
             style={{ backgroundColor: color.hex }}
