@@ -22,7 +22,8 @@ export default function ColorPicker() {
   const handleCopy = () => {
     navigator.clipboard
       .writeText(hexColor)
-      .then(() => setCopyToClipBoard(true).cath((e) => setCopyToClipBoard(e)));
+      .then(() => setCopyToClipBoard(true))
+      .catch((e) => setCopyToClipBoard(e));
   };
 
   const handleClick = (color) => {
@@ -39,7 +40,6 @@ export default function ColorPicker() {
     <div>
       <div className="bg-white shadow-[0 5px 10px rgba(0, 0, 0, 0.12)] rounded transition-[all 0.2s ease]">
         <h2>colors</h2>
-
         <div className="flex items-center justify-center">
           <div
             className="w-20 h-20 rounded mr-7"
@@ -68,8 +68,12 @@ export default function ColorPicker() {
           <div
             onClick={() => handleClick(color.hex)}
             key={color.id}
-            className="w-10 h-10 cursor-pointer"
-            style={{ backgroundColor: color.hex }}
+            className="w-10 h-10 cursor-pointer border"
+            style={{
+              backgroundColor: color.hex,
+              border: hexColor === color.hex ? "2px solid #222" : "none",
+              borderRadius: "2px",
+            }}
           ></div>
         ))}
       </div>
