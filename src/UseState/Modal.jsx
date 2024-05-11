@@ -1,9 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
+  const ref = useRef(null);
+  const handleClickOutside = (e) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      setShowModal(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, []);
   return (
     <div>
       <button
@@ -14,7 +27,7 @@ export default function Modal() {
       </button>
       {showModal && (
         <div className="fixed top-0 right-0 left-0 bottom-0 z-10 bg-[rgba(0,0,0,0.4)] flex items-center justify-center">
-          <div className="w-[500px]">
+          <div className="w-[500px]" ref={ref}>
             <header className="flex items-center justify-between bg-black p-2">
               <h1 className="font-bold text-white">Modal title</h1>
 

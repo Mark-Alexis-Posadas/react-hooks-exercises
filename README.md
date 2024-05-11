@@ -10,5 +10,5 @@
 6. Build a tab navigation component where `useState` is used to manage the active tab state. -`Done`
 7. Implement a simple quiz application using `useState` to manage the current question and user answers.
 8. Create a dropdown menu component that uses `useState` to manage the visibility of the dropdown.
-9. Develop a modal component where `useState` is used to manage the visibility of the modal.
+9. Develop a modal component where `useState` is used to manage the visibility of the modal. -`Done`
 10. Build a simple image carousel component that uses `useState` to manage the index of the current image being displayed.
