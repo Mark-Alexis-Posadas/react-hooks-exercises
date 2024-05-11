@@ -1,9 +1,9 @@
-import Modal from "./UseState/Modal";
+import ColorPicker from "./UseState/ColorPicker/ColorPicker";
 
 const App = () => {
   return (
     <>
-      <Modal />
+      <ColorPicker />
     </>
   );
 };
