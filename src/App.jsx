@@ -1,9 +1,9 @@
-import ToggleSwitch from "./UseState/ToggleSwitch";
+import ColorPicker from "./UseState/ColorPicker";
 
 const App = () => {
   return (
     <>
-      <ToggleSwitch />
+      <ColorPicker />
     </>
   );
 };
