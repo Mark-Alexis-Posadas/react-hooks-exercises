@@ -56,7 +56,7 @@ export default function TabNavigation() {
                 that inspire and uplift.
               </p>
 
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Discover Our Services:
               </h2>
               <ul className="list-disc">
@@ -75,7 +75,7 @@ export default function TabNavigation() {
                   services.
                 </li>
               </ul>
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Explore Our Portfolio:
               </h2>
               <p className="text-sm">
@@ -84,7 +84,7 @@ export default function TabNavigation() {
                 innovative designs that redefine what's possible.
               </p>
 
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Ready to Transform Your Home?
               </h2>
               <p className="text-sm">
@@ -105,7 +105,7 @@ export default function TabNavigation() {
                 the beauty of home living.
               </p>
 
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Recent Posts:
               </h2>
               <ul className="list-disc">
@@ -116,7 +116,7 @@ export default function TabNavigation() {
                   Inspiring Home Renovation Before and After Transformations
                 </li>
               </ul>
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Explore More:
               </h2>
               <p className="text-sm">
@@ -138,7 +138,7 @@ export default function TabNavigation() {
                 lifestyle.
               </p>
 
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Our Values:
               </h2>
               <ul className="list-disc">
@@ -160,7 +160,7 @@ export default function TabNavigation() {
                   on quality. Your satisfaction is our top priority.
                 </li>
               </ul>
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Meet Our Team:
               </h2>
               <p className="text-sm">
@@ -181,7 +181,7 @@ export default function TabNavigation() {
                 consultation or get more information about our services.
               </p>
 
-              <h2 className="font-bold text-green-600 my-4 text-3xl">
+              <h2 className="font-bold text-green-600 my-4 text-xl">
                 Contact Information:
               </h2>
               <ul className="list-disc">
