@@ -13,7 +13,14 @@ export default function Todo() {
     if (submittedTodo.trim() !== "") {
       setTodos([...todos, submittedTodo]);
       setSubmittedTodo("");
+      return;
     }
+    alert("Please add todo");
+  };
+
+  const handleDelete = (idx) => {
+    const deleteTodos = todos.filter((_, index) => index !== idx);
+    setTodos(deleteTodos);
   };
 
   return (
@@ -22,7 +29,7 @@ export default function Todo() {
         <input
           type="text"
           placeholder="Add todo"
-          className="bg-white rounded p-2 shadow-md mr-3"
+          className="bg-white rounded p-2 shadow-md mr-3 w-[82%]"
           value={submittedTodo}
           onChange={handleChange}
         />
@@ -37,7 +44,12 @@ export default function Todo() {
       {todos.length > 0 && (
         <ul className="w-[600px] p-5">
           {todos.map((item, index) => (
-            <TodoItem key={index} todoItem={item} />
+            <TodoItem
+              key={index}
+              todoItem={item}
+              handleDelete={handleDelete}
+              index={index}
+            />
           ))}
         </ul>
       )}
