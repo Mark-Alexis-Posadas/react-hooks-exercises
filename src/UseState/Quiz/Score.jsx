@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function Score() {
-  return <div>Score</div>;
+export default function Score({ score, onNextQuestion }) {
+  return <div>Score : {score}</div>;
 }
