@@ -1,9 +1,9 @@
-import TabNavigation from "./UseState/TabNavigation/TabNavigation";
+import Todo from "./UseState/Todo/Todo";
 
 const App = () => {
   return (
     <>
-      <TabNavigation />
+      <Todo />
     </>
   );
 };
