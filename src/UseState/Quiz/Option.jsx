@@ -1,5 +1,12 @@
-import React from "react";
-
-export default function Option() {
-  return <div>Option</div>;
+export default function Option({ quizQuestions }) {
+  return (
+    <>
+      {quizQuestions.map((question, index) => (
+        <div key={index}>
+          <input type="radio" name="option" value={question} />
+          <label className="form-check-label">{question}</label>
+        </div>
+      ))}
+    </>
+  );
 }
