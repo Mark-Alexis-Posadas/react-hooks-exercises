@@ -1,9 +1,9 @@
-import Todo from "./UseState/Todo/Todo";
+import Quiz from "./UseState/Quiz/Quiz";
 
 const App = () => {
   return (
     <>
-      <Todo />
+      <Quiz />
     </>
   );
 };
