@@ -1,12 +1,6 @@
 import { useState } from "react";
-
-// Build a tab navigation component where `useState` is used to manage the active tab state.
-const data = [
-  { id: 1, text: "Home" },
-  { id: 2, text: "Blog" },
-  { id: 3, text: "About" },
-  { id: 4, text: "Contact" },
-];
+import dataTabNavigation from "./data";
+import TabItems from "./TabItems";
 
 export default function TabNavigation() {
   const [activeTab, setActiveTab] = useState(0);
@@ -16,30 +10,13 @@ export default function TabNavigation() {
   };
   return (
     <>
-      <ul className="flex items-center justify-between bg-black p-3">
-        {data.map((item, index) => (
-          <li
-            key={item.id}
-            className={`text-center w-full cursor-pointer ${
-              index === activeTab ? "text-green-400" : "text-white"
-            }`}
-            onClick={() => handleClick(index)}
-          >
-            {item.text}
-          </li>
-        ))}
-      </ul>
+      <TabItems
+        dataTabNavigation={dataTabNavigation}
+        handleClick={handleClick}
+        activeTab={activeTab}
+      />
 
-      {/* {contentData.map((item, index) => (
-        <div
-          className={`${activeTab === index ? "block" : "hidden"}`}
-          key={item.id}
-        >
-          {item.text}
-        </div>
-      ))} */}
-
-      {data.map((item, index) => (
+      {dataTabNavigation.map((item, index) => (
         <div
           key={item.id}
           className={`${activeTab === index ? "block" : "hidden"}`}

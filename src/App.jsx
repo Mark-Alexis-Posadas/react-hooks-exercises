@@ -1,9 +1,9 @@
-import Modal from "./UseState/Modal";
+import TabNavigation from "./UseState/TabNavigation/TabNavigation";
 
 const App = () => {
   return (
     <>
-      <Modal />
+      <TabNavigation />
     </>
   );
 };

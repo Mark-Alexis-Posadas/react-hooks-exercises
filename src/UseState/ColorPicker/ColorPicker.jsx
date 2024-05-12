@@ -2,21 +2,12 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
-const colors = [
-  { id: 1, hex: "#FF5733" },
-  { id: 2, hex: "#FFC300" },
-  { id: 3, hex: "#DAF7A6" },
-  { id: 4, hex: "#9AECDB" },
-  { id: 5, hex: "#5E35B1" },
-  { id: 6, hex: "#1E8449" },
-  { id: 7, hex: "#F4D03F" },
-  { id: 8, hex: "#3498DB" },
-  { id: 9, hex: "#AF7AC5" },
-  { id: 10, hex: "#A93226" },
-];
+import colorData from "./data";
+
+import ColorItems from "./ColorItems";
 
 export default function ColorPicker() {
-  const [hexColor, setHexColor] = useState(colors[0].hex);
+  const [hexColor, setHexColor] = useState(colorData[0].hex);
   const [copyToClipboard, setCopyToClipBoard] = useState(false);
 
   const handleCopy = () => {
@@ -64,18 +55,11 @@ export default function ColorPicker() {
       </div>
 
       <div className="flex items-center justify-center bg-white shadow-md p-3 mt-10 rounded">
-        {colors.map((color) => (
-          <div
-            onClick={() => handleClick(color.hex)}
-            key={color.id}
-            className="w-10 h-10 cursor-pointer border"
-            style={{
-              backgroundColor: color.hex,
-              border: hexColor === color.hex ? "2px solid #222" : "none",
-              borderRadius: "2px",
-            }}
-          ></div>
-        ))}
+        <ColorItems
+          colorData={colorData}
+          handleClick={handleClick}
+          hexColor={hexColor}
+        />
       </div>
     </div>
   );
