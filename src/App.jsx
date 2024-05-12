@@ -1,9 +1,9 @@
-import Form from "./UseState/FormInputs/Form";
+import TabNavigation from "./UseState/TabNavigation/TabNavigation";
 
 const App = () => {
   return (
     <>
-      <Form />
+      <TabNavigation />
     </>
   );
 };
