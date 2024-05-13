@@ -7,9 +7,9 @@ export default function Question({
   selectedOption,
 }) {
   return (
-    <div>
+    <div className="bg-green-100 shadow-lg rounded p-4 w-[600px]">
       <h3>Question {quizQuestions.id}</h3>
-      <h5 className="mt-2">{quizQuestions.question}</h5>
+      <h5 className="mt-2 font-bold text-sm">{quizQuestions.question}</h5>
       <form onSubmit={handleSubmit}>
         <Option
           quizQuestions={quizQuestions.options}

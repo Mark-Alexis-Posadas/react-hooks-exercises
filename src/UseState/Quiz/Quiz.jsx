@@ -4,7 +4,6 @@ import Question from "./Question";
 import Score from "./Score";
 
 export default function Quiz() {
-  // const [question] = useState(quizQuestions);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
   const [score, setScore] = useState(0);
@@ -37,8 +36,8 @@ export default function Quiz() {
   };
 
   return (
-    <div>
-      <h1 className="font-bold text-xl">Quiz App</h1>
+    <div className="flex flex-col items-center mt-10">
+      <h1 className="font-bold text-xl mb-5">Quiz App</h1>
       {!quizEnd ? (
         <Question
           quizQuestions={quizQuestions[currentQuestion]}
