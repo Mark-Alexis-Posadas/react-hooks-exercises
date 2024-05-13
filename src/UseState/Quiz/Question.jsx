@@ -6,14 +6,13 @@ export default function Question({
   handleChange,
   selectedOption,
 }) {
-  const currentQuestion = quizQuestions[0];
   return (
     <div>
-      <h3>Question {currentQuestion.id}</h3>
-      <h5 className="mt-2">{currentQuestion.question}</h5>
+      <h3>Question {quizQuestions.id}</h3>
+      <h5 className="mt-2">{quizQuestions.question}</h5>
       <form onSubmit={handleSubmit}>
         <Option
-          quizQuestions={currentQuestion.options}
+          quizQuestions={quizQuestions.options}
           handleChange={handleChange}
           selectedOption={selectedOption}
         />

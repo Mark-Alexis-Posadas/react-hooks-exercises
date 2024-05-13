@@ -5,16 +5,16 @@ export default function Option({
 }) {
   return (
     <>
-      {quizQuestions.map((question, index) => (
+      {quizQuestions.map((option, index) => (
         <div key={index}>
           <input
             type="radio"
             name="option"
-            checked={selectedOption === question}
-            value={question}
+            checked={selectedOption === option}
+            value={option}
             onChange={handleChange}
           />
-          <label className="form-check-label">{question}</label>
+          <label className="form-check-label">{option}</label>
         </div>
       ))}
     </>
