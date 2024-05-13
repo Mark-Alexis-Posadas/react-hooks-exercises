@@ -1,9 +1,9 @@
 import { useState } from "react";
+import quizQuestions from "./data";
 import Question from "./Question";
 import Score from "./Score";
-import quizQuestions from "./data";
+
 export default function Quiz() {
-  const [question] = useState(quizQuestions);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState("");
   const [score, setScore] = useState(0);
@@ -16,33 +16,34 @@ export default function Quiz() {
   const handleSubmit = (e) => {
     e.preventDefault();
     checkAnswer();
+    handleNextQuestion();
   };
 
   const checkAnswer = () => {
     //answer
-    if (selectedOption === question[currentQuestion].answer) {
+    if (selectedOption === quizQuestions[currentQuestion].answer) {
       setScore((prevScore) => prevScore + 1);
     }
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion + 1 < question.length) {
+    if (currentQuestion + 1 < quizQuestions.length) {
       setCurrentQuestion((prevCurrentQuestion) => prevCurrentQuestion + 1);
-      selectedOption("");
+      setSelectedOption("");
     } else {
       setQuizEnd(true);
     }
   };
 
   return (
-    <div>
-      <h1 className="font-bold text-xl">Quiz App</h1>
+    <div className="flex flex-col items-center mt-10">
+      <h1 className="font-bold text-xl mb-5">Quiz App</h1>
       {!quizEnd ? (
         <Question
-          quizQuestions={quizQuestions}
+          quizQuestions={quizQuestions[currentQuestion]}
+          selectedOption={selectedOption}
           handleSubmit={handleSubmit}
           handleChange={handleChange}
-          selectedOption={selectedOption}
         />
       ) : (
         <Score score={score} onNextQuestion={handleNextQuestion} />

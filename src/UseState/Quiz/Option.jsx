@@ -5,16 +5,20 @@ export default function Option({
 }) {
   return (
     <>
-      {quizQuestions.map((question, index) => (
-        <div key={index}>
+      {quizQuestions.map((option, index) => (
+        <div key={index} className="flex items-center my-2">
           <input
+            className="mr-2"
             type="radio"
             name="option"
-            checked={selectedOption === question}
-            value={question}
+            checked={selectedOption === option}
+            value={option}
             onChange={handleChange}
+            id={option.id}
           />
-          <label className="form-check-label">{question}</label>
+          <label htmlFor={option.id} className="form-check-label">
+            {option}
+          </label>
         </div>
       ))}
     </>
