@@ -1,11 +1,9 @@
-import Quiz from "./UseState/Quiz/Quiz";
+import Carousel from "./UseState/Carousel/Carousel";
 
-const App = () => {
+export default function App() {
   return (
-    <>
-      <Quiz />
-    </>
+    <div>
+      <Carousel />
+    </div>
   );
-};
-
-export default App;
+}
