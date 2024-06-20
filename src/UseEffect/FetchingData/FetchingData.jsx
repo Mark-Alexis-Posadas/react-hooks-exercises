@@ -10,7 +10,11 @@ export default function FetchingData() {
       );
       const posts = await response.json();
       setData(posts);
-      setLoading(true);
+
+      setTimeout(() => {
+        setLoading(true);
+        setData(posts);
+      }, 5000); //
     } catch (error) {
       console.log(error);
     }
