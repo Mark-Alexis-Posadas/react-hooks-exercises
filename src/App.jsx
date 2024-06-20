@@ -1,9 +1,9 @@
-import Carousel from "./UseState/Carousel/Carousel";
+import FetchingData from "./UseEffect/FetchingData/FetchingData";
 
 export default function App() {
   return (
     <div>
-      <Carousel />
+      <FetchingData />
     </div>
   );
 }
