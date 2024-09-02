@@ -3,7 +3,6 @@ import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
-  const [isCompleted, setIsCompleted] = useState(false);
   const [submittedTodo, setSubmittedTodo] = useState("");
 
   const handleChange = (e) => {
