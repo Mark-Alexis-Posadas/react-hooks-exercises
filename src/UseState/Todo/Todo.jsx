@@ -3,6 +3,7 @@ import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
+  const [isCompleted, setIsCompleted] = useState(false);
   const [submittedTodo, setSubmittedTodo] = useState("");
 
   const handleChange = (e) => {
@@ -11,7 +12,7 @@ export default function Todo() {
 
   const handleAddTodo = () => {
     if (submittedTodo.trim() !== "") {
-      setTodos([...todos, submittedTodo]);
+      setTodos([...todos, { text: submittedTodo, completed: false }]);
       setSubmittedTodo("");
       return;
     }
@@ -21,6 +22,13 @@ export default function Todo() {
   const handleDelete = (idx) => {
     const deleteTodos = todos.filter((_, index) => index !== idx);
     setTodos(deleteTodos);
+  };
+
+  const handleIsComplete = (idx) => {
+    const updatedTodos = todos.map((todo, index) =>
+      index === idx ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(updatedTodos);
   };
 
   return (
@@ -46,9 +54,11 @@ export default function Todo() {
           {todos.map((item, index) => (
             <TodoItem
               key={index}
-              todoItem={item}
+              todoItem={item.text}
               handleDelete={handleDelete}
+              handleIsComplete={handleIsComplete}
               index={index}
+              isCompleted={item.completed}
             />
           ))}
         </ul>

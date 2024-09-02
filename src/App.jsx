@@ -1,9 +1,9 @@
-import FetchingData from "./UseEffect/FetchingData/FetchingData";
+import Todo from "./UseState/Todo/Todo";
 
 export default function App() {
   return (
-    <div>
-      <FetchingData />
-    </div>
+    <>
+      <Todo />
+    </>
   );
 }

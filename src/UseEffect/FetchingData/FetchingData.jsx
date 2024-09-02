@@ -9,12 +9,11 @@ export default function FetchingData() {
         "https://jsonplaceholder.typicode.com/posts"
       );
       const posts = await response.json();
-      setData(posts);
 
       setTimeout(() => {
         setLoading(true);
         setData(posts);
-      }, 5000); //
+      }, 3000); //
     } catch (error) {
       console.log(error);
     }
