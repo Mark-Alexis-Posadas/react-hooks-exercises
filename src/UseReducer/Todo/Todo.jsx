@@ -14,7 +14,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         todos: [...state.todos, { text: action.payload, completed: false }],
-        inputValue: "", // Clear input after adding
+        inputValue: "",
+      };
+    case "DELETE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((_, index) => index !== action.payload),
       };
     case "TOGGLE_TODO":
       return {
@@ -37,6 +42,11 @@ export default function Todo() {
     if (state.inputValue.trim() !== "") {
       dispatch({ type: "ADD_TODO", payload: state.inputValue });
     }
+  };
+
+  const handleDeleteTodo = (index) => {
+    dispatch({ type: "DELETE_TODO", payload: index });
+    console.log(index);
   };
 
   const handleToggleTodo = (index) => {
@@ -68,6 +78,7 @@ export default function Todo() {
             index={index}
             item={item}
             handleToggleTodo={handleToggleTodo}
+            handleDeleteTodo={handleDeleteTodo}
           />
         ))}
       </ul>
