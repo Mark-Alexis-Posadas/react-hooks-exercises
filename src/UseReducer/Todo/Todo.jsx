@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import TodoItem from "./TodoItem";
 
 const initialState = {
@@ -21,6 +21,14 @@ const reducer = (state, action) => {
         ...state,
         todos: state.todos.filter((_, index) => index !== action.payload),
       };
+    case "EDIT_TODO":
+      const { idx, newText } = action.payload;
+      return {
+        ...state,
+        todos: state.todos.map((item, i) =>
+          i === idx ? { ...item, text: newText } : item
+        ),
+      };
     case "TOGGLE_TODO":
       return {
         ...state,
@@ -35,8 +43,21 @@ const reducer = (state, action) => {
   }
 };
 
+const loadStateFromLocalStorage = () => {
+  const savedState = localStorage.getItem("todoAppState");
+  return savedState ? JSON.parse(savedState) : initialState;
+};
+
+const saveStateToLocalStorage = (state) => {
+  localStorage.setItem("todoAppState", JSON.stringify(state));
+};
+
 export default function Todo() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, loadStateFromLocalStorage());
+
+  useEffect(() => {
+    saveStateToLocalStorage(state);
+  }, [state]);
 
   const handleAddTodo = () => {
     if (state.inputValue.trim() !== "") {
@@ -46,12 +67,17 @@ export default function Todo() {
 
   const handleDeleteTodo = (index) => {
     dispatch({ type: "DELETE_TODO", payload: index });
-    console.log(index);
+  };
+
+  const handleEditTodo = (index, newText) => {
+    dispatch({
+      type: "EDIT_TODO",
+      payload: { idx: index, newText },
+    });
   };
 
   const handleToggleTodo = (index) => {
     dispatch({ type: "TOGGLE_TODO", payload: index });
-    console.log(index);
   };
 
   return (
@@ -79,6 +105,7 @@ export default function Todo() {
             item={item}
             handleToggleTodo={handleToggleTodo}
             handleDeleteTodo={handleDeleteTodo}
+            handleEditTodo={handleEditTodo}
           />
         ))}
       </ul>
