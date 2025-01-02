@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const App = () => {
+export const GlobalEvents = () => {
   const [isShowModal, setIsShowModal] = useState(false);
 
   useEffect(() => {
@@ -39,5 +39,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
