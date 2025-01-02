@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const App = () => {
-  return <h1>hello</h1>;
+  return <div>App</div>;
 };
 
 export default App;

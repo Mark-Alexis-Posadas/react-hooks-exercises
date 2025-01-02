@@ -4,21 +4,21 @@
 
 - Updating Document Title: Create a component that updates the document title based on a state variable using useEffect. - `Done`
 
-- Timer or Interval: Implement a countdown timer or interval that starts when the component mounts and stops when it unmounts using useEffect.
+- Timer or Interval: Implement a countdown timer or interval that starts when the component mounts and stops when it unmounts using useEffect. - `Done`
 
 - Conditional Effects: Write a component where the effect runs conditionally based on some state variable or prop change using useEffect.- `Done`
 
 ## Basic Data Fetching:
 
-- Create a component that fetches data from an API (e.g., https://jsonplaceholder.typicode.com/posts) and displays the results in a list.
+- Create a component that fetches data from an API (e.g., https://jsonplaceholder.typicode.com/posts) and displays the results in a list. `Done`
 
-- Use useEffect to perform the data fetching when the component mounts.
+- Use useEffect to perform the data fetching when the component mounts. `Done`
 
 ## Interval Timer:
 
-- Create a component that displays a counter and updates it every second using setInterval.
+- Create a component that displays a counter and updates it every second using setInterval.`Done`
 
-- Use useEffect to set up and clean up the interval timer.
+- Use useEffect to set up and clean up the interval timer.`Done`
 
 ## Conditional Effect:
 
