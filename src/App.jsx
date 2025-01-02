@@ -1,8 +1,7 @@
 import React from "react";
-import { FetchDataWhenClick } from "./UseEffect/FetchingData/FetchDataWhenClick";
 
 const App = () => {
-  return <FetchDataWhenClick />;
+  return <div>App</div>;
 };
 
 export default App;
