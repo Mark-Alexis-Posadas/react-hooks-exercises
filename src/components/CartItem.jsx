@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import MyContext from "../MyContext";
+
 export default function CartItem({ product }) {
+  const { totalItemsInCart } = useContext(MyContext);
   return (
     <li className="flex items-center justify-between p-4 border-b border-gray-300">
       <div className="flex items-center">
@@ -17,7 +21,7 @@ export default function CartItem({ product }) {
 
       <div className="flex items-center space-x-4">
         <span className="text-lg font-bold text-gray-900">
-          ${product.price}
+          {totalItemsInCart} x ${product.price}
         </span>
         <button className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition-colors">
           Remove
