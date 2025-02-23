@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import MyContext from "../MyContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProductCardItem({ product }) {
-  const { handleAddToCart } = useContext(MyContext); // Destructuring to get handleAddToCart
+  const { products, handleAddToCart, handleIncrement, handleDecrement } =
+    useContext(MyContext);
+  console.log(products);
 
   return (
     <div className="border border-gray-300 rounded-lg p-4 w-full m-4 shadow-lg hover:shadow-xl transition-shadow">
@@ -17,12 +21,15 @@ export default function ProductCardItem({ product }) {
         <span className="block text-lg font-bold text-gray-900 mt-2">
           ${product.price}
         </span>
-        <button
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
-          onClick={() => handleAddToCart(product)} // Calling handleAddToCart
-        >
-          Add to Cart
-        </button>
+
+        <div className="flex items-center justify-between">
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+            onClick={() => handleAddToCart(product)}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

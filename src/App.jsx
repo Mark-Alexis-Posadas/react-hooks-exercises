@@ -17,13 +17,39 @@ const App = () => {
     }
   };
 
+  const handleIncrement = (productId) => {
+    const updatedCart = products.map((product) =>
+      product.id === productId
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setProducts(updatedCart);
+  };
+
+  const handleDecrement = (productId) => {
+    const updatedCart = products.map((product) =>
+      product.id === productId && product.quantity > 1
+        ? { ...product, quantity: product.quantity - 1 }
+        : product
+    );
+    setProducts(updatedCart);
+  };
+
   const totalItemsInCart = products.reduce(
     (total, product) => total + product.quantity,
     0
   );
 
   return (
-    <MyContext.Provider value={{ products, handleAddToCart, totalItemsInCart }}>
+    <MyContext.Provider
+      value={{
+        products,
+        handleAddToCart,
+        totalItemsInCart,
+        handleIncrement,
+        handleDecrement,
+      }}
+    >
       <Navbar />
       <Product />
     </MyContext.Provider>
