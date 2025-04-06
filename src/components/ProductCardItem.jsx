@@ -9,7 +9,7 @@ export default function ProductCardItem({ product }) {
   console.log(products);
 
   return (
-    <div className="border border-gray-300 rounded-lg p-4 w-full m-4 shadow-lg hover:shadow-xl transition-shadow">
+    <div className="border border-gray-300 rounded-lg p-4 w-full shadow-lg hover:shadow-xl transition-shadow">
       <img
         src={product.image}
         alt={product.title}
