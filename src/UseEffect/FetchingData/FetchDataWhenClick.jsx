@@ -23,7 +23,7 @@ export const FetchDataWhenClick = () => {
           setIsFetching(false);
           setDisplayData(false);
         }
-      }, 4000);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
